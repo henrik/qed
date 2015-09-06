@@ -7,8 +7,8 @@ defmodule QED.PageView do
       quoted = Code.string_to_quoted!(code)
 
       class = case include_meta do
-        nil -> "vis vis--no-meta"
-        _ -> "vis"
+        true -> "vis"
+        false -> "vis vis--no-meta"
       end
 
       """

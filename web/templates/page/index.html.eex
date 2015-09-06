@@ -9,6 +9,7 @@
   </p>
   <p>
     <label>
+      <input type="hidden" name="meta" value="false" />
       <input type="checkbox" name="meta" value="true" <%= if @meta, do: "checked" %> />
       Include meta
     </label>
