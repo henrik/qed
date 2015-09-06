@@ -20,7 +20,7 @@
 
     <h2>Quoted expression</h2>
 
-    <code><%= @quoted %></code>
+    <code><%= quoted(@code) %></code>
 
   </div>
 
