@@ -122,7 +122,7 @@ defmodule QED.PageView do
 
   def example_code do
     """
-    IO.puts("Hello <b>bold</b> world!")
+    IO.puts("Hello world!")
     """
   end
 end
