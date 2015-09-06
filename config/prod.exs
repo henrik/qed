@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :qed, QED.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "qed.nyh.name", port: 80],
+  url: [host: System.get_env("HOSTNAME"), port: 80],
   cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
