@@ -4,6 +4,6 @@ defmodule QED.PageController do
   def index(conn, params) do
     render conn, "index.html",
     code: params["code"],
-    meta: params["meta"] != "false"
+    meta: params["meta"] == "true"
   end
 end
