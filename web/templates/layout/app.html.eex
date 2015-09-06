@@ -19,6 +19,10 @@
 
     <%= @inner %>
 
+    <footer>
+      Made with 🐝 by <a href="http://henrik.nyh.se">Henrik Nyh</a>.
+    </footer>
+
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

@@ -1,3 +1,7 @@
+<div class="intro">
+  <p>Visualizes the quoted form of Elixir code. This can be helpful when you write macros.</p>
+</div>
+
 <form>
   <p><label for="code">Code:</label></p>
   <p>
@@ -8,12 +12,16 @@
 
 <%= if @code do %>
 
-  <h2>Code</h2>
+  <div class="output">
 
-  <pre><code><%= @code %></code></pre>
+    <h2>Code</h2>
 
-  <h2>Quoted expression</h2>
+    <pre><code><%= @code %></code></pre>
 
-  <pre><code><%= @quoted %></code></pre>
+    <h2>Quoted expression</h2>
+
+    <code><%= @quoted %></code>
+
+  </div>
 
 <% end %>
