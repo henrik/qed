@@ -19,7 +19,13 @@ defmodule QED.PageView do
       """
     end
 
-    defp _render({name, meta, args}) do
+    defp _render({name, meta, args_or_atom}) do
+      last_label =
+        case args_or_atom do
+        x when is_list(x) -> "Args:"
+        _ -> "Atom:"
+        end
+
       """
         <div class="vis-tuple">
           <div>
@@ -30,7 +36,7 @@ defmodule QED.PageView do
             <span class="vis-label">Meta:</span>
             <span class="vis-meta-content">#{_render meta}</span>
           </div>
-          <div><span class="vis-label">Args:</span> #{_render args}</div>
+          <div><span class="vis-label">#{last_label}</span> #{_render args_or_atom}</div>
         </div>
       """
     end
