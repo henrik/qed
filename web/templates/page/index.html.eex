@@ -4,7 +4,7 @@
 
 <form>
   <h2><label for="code">Code:</label></h2>
-  <p>
+  <p class="constrained-width">
     <textarea name="code"><%= @code || example_code %></textarea>
   </p>
   <p>

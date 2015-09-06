@@ -2,21 +2,24 @@ body {
   padding: 20px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #333;
-  max-width: 50em;
-  margin: 0 auto;
 }
 
 body, textarea, button {
   font-size: 20px;
 }
 
-h2 {
-  font-weight: bold;
-  font-size: 20px;
+h1, .intro {
+  text-align: center;
 }
 
 h2 {
+  font-weight: bold;
+  font-size: 20px;
   margin-top: 2em;
+}
+
+form {
+  text-align: center;
 }
 
 textarea, button {
@@ -39,12 +42,20 @@ code {
   line-height: 2;
 }
 
+.constrained-width {
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .output {
-  margin-top: 2em;
-  border-top: 1px solid purple;
-  padding-top: 2em;
+  margin: 2em 0;
+  border: 0 solid purple;
+  border-width: 1px 0;
+  padding: 2em 0;
 }
 
 footer {
   margin-top: 3em;
+  text-align: center;
 }
