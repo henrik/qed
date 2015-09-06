@@ -3,9 +3,15 @@
 </div>
 
 <form>
-  <p><label for="code">Code:</label></p>
+  <h2><label for="code">Code:</label></h2>
   <p>
     <textarea name="code"><%= @code || example_code %></textarea>
+  </p>
+  <p>
+    <label>
+      <input type="checkbox" name="meta" value="true" <%= if @meta, do: "checked" %> />
+      Include meta
+    </label>
   </p>
   <button>Show me</button>
 </form>
@@ -14,15 +20,15 @@
 
   <div class="output">
 
-    <%= visualization(@code) %>
-
-    <h2>Code</h2>
-
-    <pre><code><%= @code %></code></pre>
+    <%= visualization(@code, @meta) %>
 
     <h2>Quoted expression</h2>
 
     <code><%= quoted(@code) %></code>
+
+    <h2>Code</h2>
+
+    <pre><code><%= @code %></code></pre>
 
   </div>
 

@@ -3,9 +3,19 @@ defmodule QED.PageView do
 
   # TODO: Where does this belong? Make sure Phoenix reloads the page when it changes.
   defmodule Visualizer do
-    def html(code) do
+    def html(code, include_meta) do
       quoted = Code.string_to_quoted!(code)
-      _render(quoted)
+
+      class = case include_meta do
+        nil -> "vis vis--no-meta"
+        _ -> "vis"
+      end
+
+      """
+      <div class="#{class}">
+        #{_render(quoted)}
+      </div>
+      """
     end
 
     defp _render({name, meta, args}) do
@@ -15,7 +25,7 @@ defmodule QED.PageView do
             <span class="vis-label">Name:</span>
             #{_render name}
           </div>
-          <div>
+          <div class="vis-meta">
             <span class="vis-label">Meta:</span>
             <span class="vis-meta-content">#{_render meta}</span>
           </div>
@@ -94,8 +104,8 @@ defmodule QED.PageView do
     end
   end
 
-  def visualization(code) do
-    raw Visualizer.html(code)
+  def visualization(code, include_meta) do
+    raw Visualizer.html(code, include_meta)
   end
 
   def quoted(code) do

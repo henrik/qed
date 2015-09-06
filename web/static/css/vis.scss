@@ -15,6 +15,10 @@
     opacity: 0.5;
   }
 
+  &--no-meta .vis-meta {
+    display: none;
+  }
+
   &-list {
     padding: 5px;
     display: inline-block;
