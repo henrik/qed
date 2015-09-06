@@ -1,0 +1,26 @@
+.vis {
+  &-tuple {
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid black;
+  }
+
+  &-meta {
+    opacity: 0.5;
+  }
+
+  &-list {
+    padding: 5px;
+    display: inline-block;
+  }
+
+  &-list-item {
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+  }
+
+  &-list-comma:last-child {
+    display: none;
+  }
+}
