@@ -1,4 +1,6 @@
-# QED: Quoted Expression Demonstrator for Elixir
+# Quoted Expression Demonstrator for Elixir
+
+My first Phoenix app! Approaching this in a "first make it work, then maybe learn the proper way" fashion", but any feedback is super welcome.
 
 ## Dev
 
