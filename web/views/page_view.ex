@@ -122,7 +122,7 @@ defmodule QED.PageView do
 
   def example_code do
     """
-    IO.puts("Hello world!")
+    if true, do: IO.puts("Hello!")
     """
   end
 end
