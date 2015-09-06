@@ -2,10 +2,16 @@
   &-tuple {
     padding: 5px;
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid #666;
   }
 
-  &-meta {
+  &-label {
+    text-transform: uppercase;
+    font-size: 70%;
+    opacity: 0.5;
+  }
+
+  &-meta-content {
     opacity: 0.5;
   }
 
@@ -14,13 +20,19 @@
     display: inline-block;
   }
 
+  &-list-paren {
+    font-weight: bold;
+  }
+
+  &-list-comma {
+    font-weight: bold;
+  }
+
   &-list-item {
     padding: 5px;
     display: inline-block;
     border: 1px solid #ccc;
   }
 
-  &-list-comma:last-child {
-    display: none;
-  }
+  &-list-comma:last-child { display: none; }
 }

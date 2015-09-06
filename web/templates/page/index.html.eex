@@ -5,7 +5,7 @@
 <form>
   <p><label for="code">Code:</label></p>
   <p>
-    <textarea name="code">IO.puts("Hello <b>bold</b> world!")</textarea>
+    <textarea name="code"><%= @code || example_code %></textarea>
   </p>
   <button>Show me</button>
 </form>

@@ -11,9 +11,15 @@ defmodule QED.PageView do
     defp _render({name, meta, args}) do
       """
         <div class="vis-tuple">
-          <div><b>NAME:</b> #{_render name}</div>
-          <div class="vis-meta"><b>META:</b> #{_render meta}</div>
-          <div><b>ARGS:</b> #{_render args}</div>
+          <div>
+            <span class="vis-label">Name:</span>
+            #{_render name}
+          </div>
+          <div>
+            <span class="vis-label">Meta:</span>
+            <span class="vis-meta-content">#{_render meta}</span>
+          </div>
+          <div><span class="vis-label">Args:</span> #{_render args}</div>
         </div>
       """
     end
@@ -34,16 +40,18 @@ defmodule QED.PageView do
         """
           <div class="vis-list-item">
             #{_render item}
-            <b class="vis-list-comma">,</b>
           </div>
+          <b class="vis-list-comma">,</b>
         """
       end
 
       """
         <div class="vis-list">
-          <b>[</b>
-          #{items}
-          <b>]</b>
+          <span class="vis-list-paren">[</span>
+          <span class="vis-list-items">
+            #{items}
+          </span>
+          <span class="vis-list-paren">]</span>
         </div>
       """
     end
@@ -53,16 +61,18 @@ defmodule QED.PageView do
         """
           <div class="vis-list-item">
             <i>#{h key}:</i> #{_render value}
-            <b class="vis-list-comma">,</b>
           </div>
+          <span class="vis-list-comma">,</span>
         """
       end
 
       """
         <div class="vis-list">
-          <b>[</b>
-          #{items}
-          <b>]</b>
+          <span class="vis-list-paren">[</span>
+          <span class="vis-list-items">
+            #{items}
+          </span>
+          <span class="vis-list-paren">]</span>
         </div>
       """
     end
@@ -90,5 +100,11 @@ defmodule QED.PageView do
 
   def quoted(code) do
     inspect Code.string_to_quoted!(code)
+  end
+
+  def example_code do
+    """
+    IO.puts("Hello <b>bold</b> world!")
+    """
   end
 end
