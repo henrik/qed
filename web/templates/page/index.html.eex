@@ -6,6 +6,14 @@
   <button>Show me</button>
 </form>
 
-<h2>Code</h2>
+<%= if @code do %>
 
-<pre><code><%= @code %></code></pre>
+  <h2>Code</h2>
+
+  <pre><code><%= @code %></code></pre>
+
+  <h2>Quoted expression</h2>
+
+  <pre><code><%= @quoted %></code></pre>
+
+<% end %>
