@@ -7,12 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Quoted Expression Demonstrator</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-    <h1>Quoted Expression Demonstrator</h1>
+    <h1><%= title %></h1>
 
     <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
     <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
