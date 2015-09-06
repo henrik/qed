@@ -9,6 +9,10 @@ To start your Phoenix app:
 
 Now you can visit <http://localhost:4000> from your browser.
 
+## Test
+
+TODO ;)
+
 ## Prod
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
