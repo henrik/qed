@@ -17,7 +17,7 @@
     <%= @inner %>
 
     <footer>
-      Made with 🐝 by <a href="http://henrik.nyh.se">Henrik Nyh</a>.
+      Made with 🐝 by <a href="http://henrik.nyh.se">Henrik Nyh</a> as <a href="https://github.com/henrik/qed">open source</a>.
     </footer>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
