@@ -1,5 +1,4 @@
 # FIXME: Make HTML valid. We're mixing spans and divs willy nilly.
-# TODO: Where does this belong? Make sure Phoenix reloads the page when it changes.
 # Reference: http://elixir-lang.org/getting-started/meta/quote-and-unquote.html
 defmodule QED.PageView.Visualizer do
   use QED.Web, :view
