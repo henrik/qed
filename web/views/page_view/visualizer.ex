@@ -3,6 +3,8 @@
 defmodule QED.PageView.Visualizer do
   use QED.Web, :view
 
+  @doc_version "1.0"
+
   def html(code, include_meta) do
     quoted = Code.string_to_quoted!(code)
 
@@ -29,7 +31,7 @@ defmodule QED.PageView.Visualizer do
       <div class="vis-tuple">
         <div>
           <span class="vis-label">Name:</span>
-          #{_render name}
+          #{render_name name}
         </div>
         <div class="vis-meta">
           <span class="vis-label">Meta:</span>
@@ -50,6 +52,10 @@ defmodule QED.PageView.Visualizer do
   defp _render(other) do
     other |> inspect |> h
   end
+
+  defp render_name(name = :__aliases__), do: "<a href=\"http://elixir-lang.org/docs/v#{@doc_version}/elixir/Kernel.SpecialForms.html#__aliases__/1\" class=\"doc-link\">#{inspect name}</a>"
+  defp render_name(name = :.), do:           "<a href=\"http://elixir-lang.org/docs/v#{@doc_version}/elixir/Kernel.SpecialForms.html#./2\" class=\"doc-link\">#{inspect name}</a>"
+  defp render_name(name), do: _render(name)
 
   defp render_list(list) do
     items = list |> Enum.map fn (item) ->
