@@ -42,8 +42,8 @@ defmodule QED.PageView.Visualizer do
 
   defp _render(list) when is_list(list) do
     cond do
-      Keyword.keyword?(list) -> render_keyword_list(list)
-      true -> render_non_keyword_list(list)
+      Keyword.keyword?(list) -> render_list(list |> Enum.map fn ({key, value}) -> "<i>#{h key}:</i> #{_render value}" end)
+      true                   -> render_list(list |> Enum.map fn (item) -> _render(item) end)
     end
   end
 
@@ -51,34 +51,13 @@ defmodule QED.PageView.Visualizer do
     other |> inspect |> h
   end
 
-  defp render_non_keyword_list(list) do
+  defp render_list(list) do
     items = list |> Enum.map fn (item) ->
       """
         <div class="vis-list-item">
-          #{_render item}
+          #{item}
         </div>
         <b class="vis-list-comma">,</b>
-      """
-    end
-
-    """
-      <div class="vis-list">
-        <span class="vis-list-paren">[</span>
-        <span class="vis-list-items">
-          #{items}
-        </span>
-        <span class="vis-list-paren">]</span>
-      </div>
-    """
-  end
-
-  defp render_keyword_list(list) do
-    items = list |> Enum.map fn ({key, value}) ->
-      """
-        <div class="vis-list-item">
-          <i>#{h key}:</i> #{_render value}
-        </div>
-        <span class="vis-list-comma">,</span>
       """
     end
 
