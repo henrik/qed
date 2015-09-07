@@ -43,7 +43,7 @@ defmodule QED.PageView.Visualizer do
 
   defp _render(list) when is_list(list) do
     cond do
-      keyword?(list) -> render_keyword_list(list)
+      Keyword.keyword?(list) -> render_keyword_list(list)
       true -> render_non_keyword_list(list)
     end
   end
@@ -93,18 +93,6 @@ defmodule QED.PageView.Visualizer do
       </div>
     """
   end
-
-  # Stolen from https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/inspect.ex
-
-  defp keyword?([{key, _value} | rest]) when is_atom(key) do
-    case Atom.to_char_list(key) do
-      'Elixir.' ++ _ -> false
-      _ -> keyword?(rest)
-    end
-  end
-
-  defp keyword?([]),     do: true
-  defp keyword?(_other), do: false
 
   defp h(unsafe_html) do
     unsafe_html |> html_escape |> safe_to_string
