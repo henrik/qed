@@ -1,0 +1,22 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta name="description" content=""
+    meta name="author" content=""
+
+    title = title
+
+    link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
+
+  body
+    h1
+      a href="/" = title
+
+    = @inner
+
+    footer Made with 🐝 by <a href="http://henrik.nyh.se">Henrik Nyh</a> as <a href="https://github.com/henrik/qed">open source</a>.
+
+    script src="#{static_path(@conn, "/js/app.js")}"
