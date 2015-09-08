@@ -5,39 +5,33 @@ defmodule QED.PageViewVisualizerTest do
 
   test "it adds 'vis--no-meta' if told to exclude meta" do
     output = QED.PageView.Visualizer.html("1+2", include_meta: false)
-    assert String.contains? output, "vis--no-meta"
+    assert output =~ "vis--no-meta"
 
     output = QED.PageView.Visualizer.html("1+2", include_meta: true)
-    refute String.contains? output, "vis--no-meta"
+    refute output =~ "vis--no-meta"
   end
 
   test "it handles Args" do
-    output = QED.PageView.Visualizer.html("foo(1)")
-    assert String.contains? output, "Args:"
+    assert QED.PageView.Visualizer.html("foo(1)") =~ "Args:"
   end
 
   test "it handles Atoms" do
-    output = QED.PageView.Visualizer.html("x")
-    assert String.contains? output, "Atom:"
+    assert QED.PageView.Visualizer.html("x") =~ "Atom:"
   end
 
   test "it handles keyword lists" do
-    output = QED.PageView.Visualizer.html("[a: b]")
-    assert String.contains? output, "<i>a:</i>"
+    assert QED.PageView.Visualizer.html("[a: b]") =~ "<i>a:</i>"
   end
 
   test "it handles non-keyword lists" do
-    output = QED.PageView.Visualizer.html("[1]")
-    assert String.contains? output, "1"
+    assert QED.PageView.Visualizer.html("[1]") =~ "1"
   end
 
   test "it links :__aliases__ to more info" do
-    output = QED.PageView.Visualizer.html("IO.puts 1")
-    assert String.contains? output, "SpecialForms.html#__aliases__/1"
+    assert QED.PageView.Visualizer.html("IO.puts 1") =~ "SpecialForms.html#__aliases__/1"
   end
 
   test "it links :. to more info" do
-    output = QED.PageView.Visualizer.html("IO.puts 1")
-    assert String.contains? output, "SpecialForms.html#./2"
+    assert QED.PageView.Visualizer.html("IO.puts 1") =~ "SpecialForms.html#./2"
   end
 end

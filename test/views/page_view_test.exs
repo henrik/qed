@@ -8,6 +8,6 @@ defmodule QED.PageViewTest do
   # Just testing integration. Details can be tested inside Visualizer.
   test "visualization" do
     {:safe, html} = QED.PageView.visualization("1+2", include_meta: true)
-    assert String.contains? html, ":+"
+    assert html =~ ":+"
   end
 end
