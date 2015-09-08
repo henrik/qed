@@ -21,7 +21,7 @@
 
   <div class="output">
 
-    <%= visualization(@code, @meta) %>
+    <%= visualization(@code, include_meta: @meta) %>
 
     <h2>Quoted expression</h2>
 

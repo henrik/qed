@@ -5,7 +5,9 @@ defmodule QED.PageView.Visualizer do
 
   @doc_version "1.0"
 
-  def html(code, include_meta) do
+  def html(code), do: html(code, include_meta: true)
+
+  def html(code, include_meta: include_meta) do
     quoted = Code.string_to_quoted!(code)
 
     class = case include_meta do
