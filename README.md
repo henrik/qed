@@ -13,7 +13,7 @@ Now you can visit <http://localhost:4000> from your browser.
 
 ## Test
 
-TODO ;)
+    mix test
 
 ## Prod
 
