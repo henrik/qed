@@ -1,9 +1,13 @@
 $red: #dc0000;
+$purple: purple;
+$blackish: #333;
+$white: white;
 
 body {
   padding: 20px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #333;
+  background: $white;
+  color: $blackish;
 }
 
 body, textarea, button {
@@ -36,12 +40,12 @@ textarea, button {
 textarea {
   width: 100%;
   height: 5em;
-  border: 1px solid purple;
+  border: 1px solid $purple;
 }
 
 button {
-  color: white;
-  background: purple;
+  color: $white;
+  background: $purple;
   border: none;
 }
 
@@ -57,7 +61,7 @@ code {
 
 .output {
   margin: 2em 0;
-  border: 0 solid purple;
+  border: 0 solid $purple;
   border-width: 1px 0;
   padding: 2em 0;
 }
