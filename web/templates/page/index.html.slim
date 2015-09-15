@@ -12,10 +12,10 @@ form
     label
       input type="hidden" name="meta" value="false"
 
-      = if @meta do
+      = if @meta? do
         input type="checkbox" name="meta" value="true" checked="checked"
 
-      = unless @meta do
+      = unless @meta? do
         input type="checkbox" name="meta" value="true"
 
       '
@@ -35,7 +35,7 @@ form
 
   .output
 
-    = visualization(@code, include_meta: @meta)
+    = visualization(@code, include_meta: @meta?)
 
     h2 Quoted expression
 

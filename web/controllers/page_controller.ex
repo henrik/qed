@@ -3,11 +3,12 @@ defmodule QED.PageController do
 
   def index(conn, params) do
     code = params["code"]
+    meta? = params["meta"] == "true"
 
     render conn, "index.html",
       invalid_code?: invalid_code?(code),
       code: code,
-      meta: params["meta"] == "true"
+      meta?: meta?
   end
 
   defp invalid_code?(code) do
