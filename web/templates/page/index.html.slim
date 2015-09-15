@@ -23,7 +23,11 @@ form
 
   button Show me
 
-= if @code do
+= if @invalid_code? do
+
+  p That code doesn't parse :O
+
+= if @code && !@invalid_code? do
 
   .output
 

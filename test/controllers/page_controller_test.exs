@@ -16,4 +16,11 @@ defmodule QED.PageControllerTest do
     # Quoted
     assert response =~ "[1, 2]"
   end
+
+  test "GET / with unparsable code" do
+    conn = get conn(), "/?code=-"
+    response = html_response(conn, 200)
+
+    assert response =~ "doesn't parse"
+  end
 end
