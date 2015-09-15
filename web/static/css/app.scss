@@ -8,14 +8,11 @@ body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   background: $white;
   color: $blackish;
+  text-align: center;
 }
 
 body, textarea, button {
   font-size: 20px;
-}
-
-h1, .intro {
-  text-align: center;
 }
 
 h1 a {
@@ -27,10 +24,6 @@ h2 {
   font-weight: bold;
   font-size: 20px;
   margin-top: 2em;
-}
-
-form {
-  text-align: center;
 }
 
 textarea, button {
@@ -68,10 +61,8 @@ code {
 
 .error {
   color: $red;
-  text-align: center;
 }
 
 footer {
   margin-top: 3em;
-  text-align: center;
 }
