@@ -1,8 +1,8 @@
 defmodule QED.PageView do
   use QED.Web, :view
 
-  def visualization(code, include_meta: include_meta) do
-    raw QED.PageView.Visualizer.html(code, include_meta: include_meta)
+  def visualization(code, include_meta?: include_meta?) do
+    raw QED.PageView.Visualizer.html(code, include_meta?: include_meta?)
   end
 
   def quoted(code) do

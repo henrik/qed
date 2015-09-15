@@ -4,10 +4,10 @@ defmodule QED.PageViewVisualizerTest do
   # These tests are not very detailed. The idea is to catch any major errors, and leave the rest to manual, visual testing.
 
   test "it adds 'vis--no-meta' if told to exclude meta" do
-    output = QED.PageView.Visualizer.html("1+2", include_meta: false)
+    output = QED.PageView.Visualizer.html("1+2", include_meta?: false)
     assert output =~ "vis--no-meta"
 
-    output = QED.PageView.Visualizer.html("1+2", include_meta: true)
+    output = QED.PageView.Visualizer.html("1+2", include_meta?: true)
     refute output =~ "vis--no-meta"
   end
 
