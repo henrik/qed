@@ -37,7 +37,7 @@ defmodule QED.PageView.Visualizer do
         </div>
         <div class="vis-meta">
           <span class="vis-label">Meta:</span>
-          <span class="vis-meta-content">#{_render meta}</span>
+          <div class="vis-meta-content">#{_render meta}</div>
         </div>
         <div><span class="vis-label">#{last_label}</span> #{_render args_or_atom}</div>
       </div>
@@ -72,9 +72,9 @@ defmodule QED.PageView.Visualizer do
     """
       <div class="vis-list">
         <span class="vis-list-paren">[</span>
-        <span class="vis-list-items">
+        <div class="vis-list-items">
           #{items}
-        </span>
+        </div>
         <span class="vis-list-paren">]</span>
       </div>
     """

@@ -16,6 +16,7 @@
   }
 
   &-meta-content {
+    display: inline-block;
     opacity: 0.5;
   }
 
@@ -34,6 +35,10 @@
 
   &-list-comma {
     font-weight: bold;
+  }
+
+  &-list-items {
+    display: inline-block;
   }
 
   &-list-item {
