@@ -25,7 +25,11 @@ form
 
 = if @invalid_code? do
 
-  p That code doesn't parse :O
+  .output
+    p.error
+      strong Error:
+      '
+      ' That code doesn't parse :O Sorry!
 
 = if @code && !@invalid_code? do
 

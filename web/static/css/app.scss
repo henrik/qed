@@ -1,3 +1,5 @@
+$red: #dc0000;
+
 body {
   padding: 20px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -58,6 +60,11 @@ code {
   border: 0 solid purple;
   border-width: 1px 0;
   padding: 2em 0;
+}
+
+.error {
+  color: $red;
+  text-align: center;
 }
 
 footer {
