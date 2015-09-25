@@ -15,6 +15,8 @@ html lang="en"
 
     = @inner
 
-    footer Made with 🐝 by <a href="http://henrik.nyh.se">Henrik Nyh</a> as <a href="https://github.com/henrik/qed">open source</a>.
+    footer
+      p As parsed by Elixir #{System.version}.
+      p Made with 🐝 by <a href="http://henrik.nyh.se">Henrik Nyh</a> as <a href="https://github.com/henrik/qed">open source</a>.
 
     script src="#{static_path(@conn, "/js/app.js")}"
