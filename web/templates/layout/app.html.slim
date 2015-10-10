@@ -10,8 +10,7 @@ html lang="en"
     link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
 
   body
-    h1
-      a href="/" = title
+    h1: a href="/" = title
 
     = @inner
 
