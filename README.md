@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/henrik/qed.svg?branch=master)](https://travis-ci.org/henrik/qed)
 
-My first Phoenix app! Approaching this in a "first make it work, then maybe learn the proper way" fashion, but any feedback is super welcome.
+My first Phoenix app! Any feedback is super welcome.
 
 ## Dev
 
