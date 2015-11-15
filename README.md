@@ -19,7 +19,7 @@ Now you can visit <http://localhost:4000> from your browser.
 
 ## Prod
 
-    git push dokku
+    script/deploy
 
 ## Phoenix resources
 
