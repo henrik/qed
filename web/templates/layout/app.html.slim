@@ -12,7 +12,7 @@ html lang="en"
   body
     h1: a href="/" = title
 
-    = @inner
+    = render @view_module, @view_template, assigns
 
     footer
       p As parsed by Elixir #{System.version}.
