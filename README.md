@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/henrik/qed.svg?branch=master)](https://travis-ci.org/henrik/qed)
 
-My first Phoenix app! Any feedback is super welcome.
-
 ## Dev
 
 To start your Phoenix app:
