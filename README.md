@@ -1,7 +1,5 @@
 # Quoted Expression Demonstrator for Elixir
 
-[![Build Status](https://travis-ci.org/henrik/qed.svg?branch=master)](https://travis-ci.org/henrik/qed)
-
 ## Dev
 
 To start your Phoenix server:
