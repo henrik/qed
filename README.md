@@ -4,25 +4,14 @@
 
 ## Dev
 
-To start your Phoenix app:
+To start your Phoenix server:
 
-  1. Install dependencies with `mix deps.get`
-  2. Start Phoenix endpoint with `mix phoenix.server`
+  * Install dependencies with `mix deps.get`
+  * Install Node.js dependencies with `npm install` inside the `assets` directory
+  * Start Phoenix endpoint with `mix phx.server`
 
-Now you can visit <http://localhost:4000> from your browser.
-
-## Test
-
-    mix test
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ## Prod
 
-    script/deploy
-
-## Phoenix resources
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: http://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+Deployed to Gigalixir. Just push to that remote.

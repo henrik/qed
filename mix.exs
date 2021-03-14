@@ -1,44 +1,59 @@
-defmodule QED.Mixfile do
+defmodule QED.MixProject do
   use Mix.Project
 
   def project do
-    [app: :qed,
-     version: "0.0.1",
-     elixir: "~> 1.3",
-     elixirc_paths: elixirc_paths(Mix.env),
-     compilers: [:phoenix] ++ Mix.compilers,
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps]
+    [
+      app: :qed,
+      version: "0.1.0",
+      elixir: "~> 1.7",
+      elixirc_paths: elixirc_paths(Mix.env()),
+      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
+      deps: deps()
+    ]
   end
 
-  # Configuration for the OTP application
+  # Configuration for the OTP application.
   #
-  # Type `mix help compile.app` for more information
+  # Type `mix help compile.app` for more information.
   def application do
-    [mod: {QED, []},
-     applications: [
-       :phoenix,
-       :phoenix_html,
-       :cowboy,
-       :logger,
-    ]]
+    [
+      mod: {QED.Application, []},
+      extra_applications: [:logger, :runtime_tools]
+    ]
   end
 
-  # Specifies which paths to compile per environment
-  defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
-  defp elixirc_paths(_),     do: ["lib", "web"]
+  # Specifies which paths to compile per environment.
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_), do: ["lib"]
 
-  # Specifies your project dependencies
+  # Specifies your project dependencies.
   #
-  # Type `mix help deps` for examples and options
+  # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.1"},
-      {:phoenix_html, "~> 2.3"},
-      {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:cowboy, "~> 1.0"},
-      {:phoenix_slim, "> 0.0.0"},
+      {:phoenix, "~> 1.5.8"},
+      {:phoenix_html, "~> 2.11"},
+      {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:phoenix_live_dashboard, "~> 0.4"},
+      {:telemetry_metrics, "~> 0.4"},
+      {:telemetry_poller, "~> 0.4"},
+      {:gettext, "~> 0.11"},
+      {:jason, "~> 1.0"},
+      {:plug_cowboy, "~> 2.0"}
+    ]
+  end
+
+  # Aliases are shortcuts or tasks specific to the current project.
+  # For example, to install project dependencies and perform other setup tasks, run:
+  #
+  #     $ mix setup
+  #
+  # See the documentation for `Mix` for more info on aliases.
+  defp aliases do
+    [
+      setup: ["deps.get", "cmd npm install --prefix assets"]
     ]
   end
 end

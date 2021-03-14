@@ -1,6 +1,0 @@
-#!/bin/sh
-
-set -e
-
-echo "Pushing/deploying…"
-git push dokku
