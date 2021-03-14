@@ -1,5 +1,7 @@
 # Quoted Expression Demonstrator for Elixir
 
+[![CI](https://github.com/henrik/qed/actions/workflows/ci.yml/badge.svg)](https://github.com/henrik/qed/actions/workflows/ci.yml)
+
 ## Dev
 
 To start your Phoenix server:
