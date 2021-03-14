@@ -28,25 +28,3 @@ jobs:
       run: mix deps.get
     - name: Run tests
       run: mix test
-  deploy:
-    needs: tests
-    if: github.ref == 'refs/heads/main' # Only run on main branch.
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-        with:
-          ref: main # Check out master instead of the latest commit.
-          fetch-depth: 0  # Fetch all history, since deploy is Git based.
-      - name: Set up Python dependency
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8.1
-      - name: Deploy to Gigalixir
-        uses: mhanberg/gigalixir-action@v0.4.0
-        with:
-          GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
-          GIGALIXIR_PASSWORD: ${{ secrets.GIGALIXIR_PASSWORD }}
-          GIGALIXIR_APP: qed
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          MIGRATIONS: false
