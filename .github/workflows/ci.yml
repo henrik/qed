@@ -21,7 +21,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: deps
-        key: ${{ runner.os }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, "/mix.lock")) }}
+        key: ${{ runner.os }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
         restore-keys: |
           ${{ runner.os }}-mix-
     - name: Install deps
@@ -30,7 +30,7 @@ jobs:
       run: mix test
   deploy:
     needs: tests
-    if: github.ref == "refs/heads/main" # Only run on main branch.
+    if: github.ref == 'refs/heads/main' # Only run on main branch.
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -42,7 +42,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8.1
-      - name: "Deploy to Gigalixir"
+      - name: Deploy to Gigalixir
         uses: mhanberg/gigalixir-action@v0.4.0
         with:
           GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
