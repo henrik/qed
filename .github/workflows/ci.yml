@@ -10,8 +10,8 @@ jobs:
       matrix:
         # Matrix so we can reference in caches below: https://www.mitchellhanberg.com/ci-cd-with-phoenix-github-actions-and-gigalixir/
         # NOTE: Keep in sync with elixir_buildpack.config.
-        elixir: [1.11.3]
-        otp: [23.2.2]
+        elixir: [1.12.0]
+        otp: [23.3.4]
     steps:
     - name: Check out code
       uses: actions/checkout@v2
