@@ -1,5 +1,5 @@
 # This file is responsible for configuring your application
-# and its dependencies.
+# and its dependencies with the aid of the Config module.
 #
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
@@ -7,13 +7,25 @@
 # General application configuration
 import Config
 
+config :qed,
+  namespace: QED
+
 # Configures the endpoint
 config :qed, QEDWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "303kJ4fMvpY23vWrFWarHcNN5Ypr4WQ4gr7YFGv/iFqqiOF/ae6zuB/3qqHmwjAu",
   render_errors: [view: QEDWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: QED.PubSub,
-  live_view: [signing_salt: "itZIiOXE"]
+  live_view: [signing_salt: "iR97LCFo"]
+
+# Configure esbuild (the version is required)
+config :esbuild,
+  version: "0.14.29",
+  default: [
+    args:
+      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+    cd: Path.expand("../assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -23,6 +35,13 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :dart_sass,
+  version: "1.54.5",
+  default: [
+    args: ~w(css/app.scss ../priv/static/assets/app.css),
+    cd: Path.expand("../assets", __DIR__)
+  ]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env()}.exs"
+import_config "#{config_env()}.exs"
