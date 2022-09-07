@@ -13,8 +13,8 @@
 #   - Ex: hexpm/elixir:1.13.4-erlang-25.0.2-debian-bullseye-20210902-slim
 
 # NOTE: Keep in sync with .github/workflows/main.yml.
-ARG ELIXIR_VERSION=1.13.4
-ARG OTP_VERSION=25.0.2
+ARG OTP_VERSION=25.0.4
+ARG ELIXIR_VERSION=1.14.0
 
 ARG DEBIAN_VERSION=bullseye-20210902-slim
 
