@@ -1,22 +1,18 @@
 # Quoted Expression Demonstrator for Elixir
 
-[![CI](https://github.com/henrik/qed/actions/workflows/ci.yml/badge.svg)](https://github.com/henrik/qed/actions/workflows/ci.yml)
+[![CI](https://github.com/henrik/qed/actions/workflows/main.yml/badge.svg)](https://github.com/henrik/qed/actions/workflows/main.yml)
 
 ## Dev
 
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-### Updating deps
-
-    mix deps.update --all
-    npm update --prefix assets
-
 ## Prod
 
-Deployed to Gigalixir. Just push to that remote.
+Deployed to Fly.io. Just push to GitHub.
+
+See `Dockerfile` and `fly.toml` for config.

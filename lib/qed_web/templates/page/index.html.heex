@@ -10,7 +10,7 @@
   <p>
     <label>
       <input type="hidden" name="meta" value="false">
-      <input type="checkbox" name="meta" value="true" <%= if @meta?, do: "checked" %>>
+      <input type="checkbox" name="meta" value="true" checked={@meta?}>
       Include meta
     </label>
   </p>
@@ -37,4 +37,5 @@
     <h2>Code</h2>
 
     <pre><code><%= @code %></code></pre>
+  </div>
 <% end %>

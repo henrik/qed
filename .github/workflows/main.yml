@@ -1,0 +1,22 @@
+name: Test and deploy
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
+        with:
+          # NOTE: Keep in sync with Dockerfile.
+          otp-version: 25.0.2
+          elixir-version: 1.13.4
+      - run: mix deps.get
+      - run: mix test
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
