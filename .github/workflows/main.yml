@@ -13,6 +13,7 @@ jobs:
       - run: mix deps.get
       - run: mix test
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     env:
       FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
